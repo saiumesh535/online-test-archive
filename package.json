@@ -4,7 +4,7 @@
   "description": "Online testing for campus recruitment",
   "main": "index.js",
   "scripts": {
-    "start": "cd client && npm run build"
+    "start": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
