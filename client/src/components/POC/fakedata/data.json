@@ -1,0 +1,22 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "Is const immutable",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "answer": "a"
+        },
+        {
+            "id": 2,
+            "question": "Is let immutable",
+            "options": [
+                "No",
+                "Yes"
+            ],
+            "answer": "a"
+        }
+    ]
+}
