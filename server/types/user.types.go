@@ -6,6 +6,6 @@ type UserLogin struct {
 }
 
 type User struct {
-	UserID int `json:"user_id" db:"user_id"`
+	ID       int    `json:"id" db:"id"`
 	Username string `json:"username"`
 }

@@ -1,8 +1,8 @@
 package database
 
 import (
-	_ "github.com/lib/pq"
 	"github.com/jmoiron/sqlx"
+	_ "github.com/lib/pq"
 	"log"
 	"os"
 )
