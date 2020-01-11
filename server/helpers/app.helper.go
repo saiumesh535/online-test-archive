@@ -6,5 +6,5 @@ import (
 )
 
 func GetPort() string {
-	return fmt.Sprintf(":%s", os.Getenv("PORT"))
+	return fmt.Sprintf("localhost:%s", os.Getenv("PORT"))
 }

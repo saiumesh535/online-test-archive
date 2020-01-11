@@ -1,0 +1,6 @@
+// http://localhost:8080/auth/login
+{
+	"name": "checking",
+	"timer": 60,
+	"cutoff": 20
+}

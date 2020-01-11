@@ -17,6 +17,6 @@ func init() {
 
 func main() {
 	PGInstance := database.ConnectPostgresSQL()
-	appDep := types.AppDep{PGInstance:PGInstance}
+	appDep := types.AppDep{PGInstance: PGInstance}
 	server.InitServer(appDep)
 }
