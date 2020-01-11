@@ -8,4 +8,5 @@ import (
 func AppMiddleware(e *echo.Echo) {
 	e.Use(middleware.Recover())
 	e.Use(middleware.Gzip())
+	e.Use(middleware.CORS())
 }
