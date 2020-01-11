@@ -2,6 +2,7 @@ import { createReducer, createAction } from '@reduxjs/toolkit';
 import { AppState } from '..';
 
 export const increaseCounter = createAction<number>('INCREASE_COUNTER');
+export const increaseCounterEffect = createAction<number>('INCREASE_COUNTER_EFFECT');
 export const resetCounter = createAction('RESET_COUNTER');
 
 export const counterInitialState = 0;

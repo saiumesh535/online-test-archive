@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import CounterComponent from './store/reducer-sample/counter.component';
+import RoutingComponent from './components/routing/routing.component';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <CounterComponent />
+      <RoutingComponent />
     </div>
   );
 }

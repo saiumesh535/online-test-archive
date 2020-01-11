@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import createSagaMiddleware from 'redux-saga'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { configureStore } from './store';
+import { rootSaga } from './effects';
 
-
-const store = configureStore();
+const sagaMiddleware = createSagaMiddleware();
+const store = configureStore(sagaMiddleware);
+sagaMiddleware.run(rootSaga)
 const Application = <Provider store={store}>
     <App />
 </Provider>

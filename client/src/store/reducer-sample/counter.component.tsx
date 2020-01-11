@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { selectCounter, increaseCounter } from './counter.reducer'
+import { selectCounter, increaseCounterEffect } from './counter.reducer'
 
 function CounterComponent() {
     const counter = useSelector(selectCounter);
     const dispatch = useDispatch();
     function increase() {
-        dispatch(increaseCounter(1));
+        dispatch(increaseCounterEffect(1));
     }
     return (
         <div>
