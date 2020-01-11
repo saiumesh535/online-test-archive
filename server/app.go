@@ -13,7 +13,7 @@ func InitServer(appDep types.AppDep) {
 	e := echo.New()
 	port := helpers.GetPort()
 
-	// Application middlewares
+	// Application middleware
 	middlewares.AppMiddleware(e)
 
 	// application routes
