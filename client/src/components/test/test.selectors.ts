@@ -11,6 +11,9 @@ export const selectTestCreate =(state: AppState) => {
 export const selectTestName =(state: AppState) => {
   return selectTestCreate(state).name;
 }
-export const selectTestDuration =(state: AppState) => {
+export const selectTestTimer =(state: AppState) => {
   return selectTestCreate(state).timer;
+}
+export const selectTestCutoff =(state: AppState) => {
+  return selectTestCreate(state).cutoff;
 }

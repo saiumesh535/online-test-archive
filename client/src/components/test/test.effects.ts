@@ -1,16 +1,17 @@
-import { Test } from './../../types/common.types';
-import { createTestAPI } from './../../api/http';
+import { testAPI } from './../../api/http';
 import { takeLatest, select } from 'redux-saga/effects';
 import { CREATE_TEST } from './test.actions';
-import { selectTestName, selectTestDuration } from './test.selectors';
+import { selectTestName, selectTestTimer, selectTestCutoff } from './test.selectors';
 
 function* createTestEffect (){
   try{
     const testName = yield select(selectTestName);
-    const testTimer = yield select(selectTestDuration);
-    yield createTestAPI({
+    const testTimer = yield select(selectTestTimer);
+    const testCutOff = yield select(selectTestCutoff);
+    yield testAPI({
       name: testName,
-      timer: testTimer
+      timer: testTimer,
+      cutoff: testCutOff
     });
     console.log('inserted Test');
   } catch(e) {

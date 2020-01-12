@@ -16,8 +16,6 @@ function RoutingComponent() {
             <Route path = {RoutingPaths.admin_view} component = {AdminViewComponent}/>
             <Route path = {RoutingPaths.test} component={TestComponent} />
             <Route path = {RoutingPaths.add_question} component = {AddQuestionComponent}/>
-            <Route path={RoutingPaths.base} exact={true} render={() => <Redirect to={RoutingPaths.test} />} />
-            <Route path={RoutingPaths.counter} component={CounterComponent} />
         </Router>
     )
 }

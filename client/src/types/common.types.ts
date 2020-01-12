@@ -1,8 +1,4 @@
-export interface Test {
-  id?: number,
-  name: string,
-  timer: number
-}
+import { Test } from "./test.types";
 
 export interface Question {
   id: number;

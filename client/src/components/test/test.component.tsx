@@ -1,22 +1,25 @@
 import React, { useState } from 'react'
 import InputComponent from '../stateless/input/input.component'
-import { testAPI } from '../../api/http';
+import { useDispatch } from 'react-redux';
+import { createTest } from './test.actions';
+import { RoutingPaths } from '../../helpers/routing.paths';
+import { history } from '../../helpers/history.helper';
 
 function TestComponent() {
     const [testName, setTestName] = useState('');
     const [testTime, setTestTime] = useState(0);
     const [testCutOff, setTestCutOff] = useState(0);
+    const dispatch = useDispatch();
+
     async function onFormSubmit() {
-        try {
-            await testAPI({
-                name: testName,
-                cutoff: testCutOff,
-                timer: testTime
-            });
-        } catch (error) {
-            console.error(error)
-        }
+        dispatch(createTest({
+            name: testName,
+            timer: testTime,
+            cutoff: testCutOff
+          }));
+        history.push(RoutingPaths.add_question);
     }
+
     return (
         <form onSubmit={onFormSubmit}>
             <InputComponent

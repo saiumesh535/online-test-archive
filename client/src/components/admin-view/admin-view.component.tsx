@@ -4,7 +4,7 @@ import { history } from '../../helpers/history.helper';
 import { RoutingPaths } from '../../helpers/routing.paths';
 
 function onCreateTest(){
-  history.push(RoutingPaths.create_test);
+  history.push(RoutingPaths.test);
 }
 
 function viewResults() {
