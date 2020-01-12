@@ -8,9 +8,7 @@ interface Props{
 function CardComponent(props: Props) {
   return (
     <div>
-      <div className= 'card' onClick = {()=> props.action()}>
-        <span className = 'card_name'>{props.name}</span>
-      </div>
+      <button className= 'card' onClick = {()=> props.action()}>{props.name}</button>
     </div>
   );
 }
