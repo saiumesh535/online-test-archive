@@ -1,4 +1,4 @@
-// http://localhost:8080/auth/login
+// http://localhost:8080/test
 {
 	"name": "checking",
 	"timer": 60,

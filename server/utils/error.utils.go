@@ -11,3 +11,4 @@ func RequestError(err error) ErrorResponse {
 		Message: err.Error(),
 	}
 }
+
