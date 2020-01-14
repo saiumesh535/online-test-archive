@@ -1,5 +1,7 @@
 export const RoutingPaths = {
     base: '/',
     counter: '/counter',
-    test: '/test'
+    test: '/test',
+    college: '/college_create',
+    resolver: '/resolver'
 }
