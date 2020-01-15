@@ -4,6 +4,7 @@ import { selectTests } from '../test/tests.selector'
 import SelectComponent from '../stateless/input/select/select.component';
 import InputComponent from '../stateless/input/input.component';
 import { saveCollege } from './college.actions';
+import { Test } from '../../types/test.types';
 
 function CollegeComponent() {
     const tests = useSelector(selectTests);
@@ -13,7 +14,7 @@ function CollegeComponent() {
     const dispatch = useDispatch();
 
     function onTestSelect(value: string) {
-        const selectedTest = tests.find((test) => test.name === value);
+        const selectedTest = tests.find((test: Test) => test.name === value);
         if(selectedTest) {
             setSelectedTestId(selectedTest.id);
         }
@@ -30,7 +31,7 @@ function CollegeComponent() {
         <Fragment>
             <SelectComponent
                 onSelect={onTestSelect}
-                options={tests.map((test) => test.name)}
+                options={tests.map((test: Test) => test.name)}
             />
             <InputComponent
                 id="college_name"

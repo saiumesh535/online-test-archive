@@ -1,9 +1,8 @@
-export interface TestInput {
+export interface CreateTest {
     name: string;
     timer: number;
-    cutoff: number;
+    cutOff: number;
 }
-
-export interface Test extends TestInput {
+export interface Test extends CreateTest {
     id: number;
 }

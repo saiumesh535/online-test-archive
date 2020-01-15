@@ -1,12 +1,13 @@
 package test
 
 import (
-	"github.com/labstack/echo/v4"
-	"github.com/lib/pq"
 	"net/http"
 	"online-test/server/models/test"
 	"online-test/server/types"
 	"online-test/server/utils"
+
+	"github.com/labstack/echo/v4"
+	"github.com/lib/pq"
 )
 
 type TestHandler struct {
@@ -42,7 +43,7 @@ func (handler TestHandler) CreateTest(c echo.Context) error {
 }
 
 func (handler TestHandler) GetTests(c echo.Context) error {
-	var tests []types.Test
+	tests := []types.Test{}
 	err := handler.Model.GetTestsModel(&tests)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, utils.RequestError(err))

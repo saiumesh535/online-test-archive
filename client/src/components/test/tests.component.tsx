@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import InputComponent from '../stateless/input/input.component'
-import { testAPI } from '../../api/http';
+import { useDispatch } from 'react-redux';
+import { createTest } from './test.actions';
 
 function TestComponent() {
     const [testName, setTestName] = useState('');
     const [testTime, setTestTime] = useState(0);
     const [testCutOff, setTestCutOff] = useState(0);
-    async function onFormSubmit() {
-        try {
-            await testAPI({
-                name: testName,
-                cutoff: testCutOff,
-                timer: testTime
-            });
-        } catch (error) {
-            console.error(error)
-        }
+    const dispatch = useDispatch();
+
+    function submitTest() {
+        dispatch(createTest({
+            name: testName,
+            timer: testTime,
+            cutOff: testCutOff
+          }));
     }
+
     return (
-        <form onSubmit={onFormSubmit}>
+        <Fragment>
             <InputComponent
                 id="test_name"
                 label="Test Name"
@@ -43,8 +43,8 @@ function TestComponent() {
                 value={testCutOff}
                 onChange={(e) => setTestCutOff(Number(e.target.value))}
             />
-            <input type="submit" value="submit"/>
-        </form>
+            <button value="Create Test" onClick ={submitTest} />
+        </Fragment>
     )
 }
 
