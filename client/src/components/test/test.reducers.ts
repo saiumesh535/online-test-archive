@@ -1,6 +1,7 @@
 import { TestState } from './../../types/common.types';
 import { createReducer } from '@reduxjs/toolkit';
 import { createTestSuccess } from './test.actions';
+import { testsSuccess } from './tests.actions';
 
 
 export const testInitState: TestState = {
@@ -16,6 +17,12 @@ export const testReducer = createReducer<TestState>(testInitState, (builder) => 
       tests:[...state.tests, action.payload],
       testId:action.payload.id
     }
+  })
+  .addCase(testsSuccess, (state, action) => {
+        return {
+          ...state,
+          tests: [...action.payload]
+        }
   })
 }
 );

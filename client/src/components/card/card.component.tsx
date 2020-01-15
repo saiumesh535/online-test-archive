@@ -1,5 +1,4 @@
 import React from 'react';
-import { prependOnceListener } from 'cluster';
 
 interface Props{
   name: string;
@@ -8,7 +7,7 @@ interface Props{
 function CardComponent(props: Props) {
   return (
     <div>
-      <button className= 'card' onClick = {()=> props.action()}>{props.name}</button>
+      <button className= 'card' onClick = {props.action}>{props.name}</button>
     </div>
   );
 }

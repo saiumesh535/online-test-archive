@@ -3,5 +3,7 @@ export const RoutingPaths = {
     counter: '/counter',
     admin_view: '/admin',
     add_question: '/add-question',
-    createTest: '/test'
+    createTest: '/test',
+    college: '/college_create',
+    resolver: '/resolver',
 }
