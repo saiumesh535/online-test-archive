@@ -1,6 +1,8 @@
-export interface Test {
-    id?: number;
+export interface CreateTest {
     name: string;
     timer: number;
-    cutoff: number;
+    cutOff: number;
+}
+export interface Test extends CreateTest {
+    id: number;
 }

@@ -1,19 +1,21 @@
+import { history } from './../../helpers/history.helper';
+import { CreateTest, Test } from './../../types/test.types';
 import { testAPI } from './../../api/http';
-import { takeLatest, select } from 'redux-saga/effects';
-import { CREATE_TEST } from './test.actions';
-import { selectTestName, selectTestTimer, selectTestCutoff } from './test.selectors';
+import { takeLatest, put } from 'redux-saga/effects';
+import { CREATE_TEST, createTestSuccess } from './test.actions';
+import { Action } from '@reduxjs/toolkit';
+import { RoutingPaths } from '../../helpers/routing.paths';
 
-function* createTestEffect (){
+function* createTestEffect (action: Action<CreateTest>){
+  const test: CreateTest = action.payload;
   try{
-    const testName = yield select(selectTestName);
-    const testTimer = yield select(selectTestTimer);
-    const testCutOff = yield select(selectTestCutoff);
-    yield testAPI({
-      name: testName,
-      timer: testTimer,
-      cutoff: testCutOff
-    });
-    console.log('inserted Test');
+    const response = yield testAPI(test);
+    const testSuccess: Test = {
+      id: response.id,
+      ...test
+    }
+    yield put(createTestSuccess(testSuccess));
+    history.push(RoutingPaths.add_question)
   } catch(e) {
     console.error('error while inserting Test ', e);
   }
@@ -21,5 +23,6 @@ function* createTestEffect (){
 }
 
 export const testEffects = [
-  takeLatest(CREATE_TEST, createTestEffect)
+  takeLatest(CREATE_TEST, createTestEffect),
+
 ]

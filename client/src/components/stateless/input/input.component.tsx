@@ -5,7 +5,7 @@ interface Props {
     label: string;
     placeholder: string;
     value: string | number;
-    type: 'number' | 'text';
+    type: 'number' | 'text' | 'radio';
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 

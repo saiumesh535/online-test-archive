@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import InputComponent from '../stateless/input/input.component'
 import { useDispatch } from 'react-redux';
 import { createTest } from './test.actions';
-import { RoutingPaths } from '../../helpers/routing.paths';
-import { history } from '../../helpers/history.helper';
 
 function TestComponent() {
     const [testName, setTestName] = useState('');
@@ -11,17 +9,16 @@ function TestComponent() {
     const [testCutOff, setTestCutOff] = useState(0);
     const dispatch = useDispatch();
 
-    async function onFormSubmit() {
+    function submitTest() {
         dispatch(createTest({
             name: testName,
             timer: testTime,
-            cutoff: testCutOff
+            cutOff: testCutOff
           }));
-        history.push(RoutingPaths.add_question);
     }
 
     return (
-        <form onSubmit={onFormSubmit}>
+        <Fragment>
             <InputComponent
                 id="test_name"
                 label="Test Name"
@@ -46,8 +43,8 @@ function TestComponent() {
                 value={testCutOff}
                 onChange={(e) => setTestCutOff(Number(e.target.value))}
             />
-            <input type="submit" value="submit"/>
-        </form>
+            <button value="Create Test" onClick ={submitTest} />
+        </Fragment>
     )
 }
 

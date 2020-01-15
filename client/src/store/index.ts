@@ -1,5 +1,6 @@
+import { questionReducer } from './../components/question/question.reducer';
 import { testReducer } from '../components/test/test.reducers';
-import { TestCreateState } from './../types/common.types';
+import { TestState, QuestionState } from './../types/common.types';
 import { createStore, Store, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import { counterReducer } from './reducer-sample/counter.reducer';
@@ -7,14 +8,16 @@ import { SagaMiddleware } from 'redux-saga';
 
 export interface AppState {
     counter: number;
-    testCreate: TestCreateState;
+    testState: TestState;
+    questionState: QuestionState;
 }
 
 
 function getReducers() {
     return combineReducers<AppState>({
         counter: counterReducer,
-        testCreate: testReducer
+        testState: testReducer,
+        questionState: questionReducer
 
     });
 }

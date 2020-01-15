@@ -2,14 +2,14 @@ import React, { Fragment } from 'react';
 import RadioOptionComponent from '../optionRadio/radio.option.component';
 
 interface Props{
-  index: number;
+  option: number;
+  updateOption: (value: any, index: number) => void;
 }
 
 function OptionComponent(props: Props) {
   return(
     <Fragment>
-      <RadioOptionComponent radioNumber={props.index} />
-      <input type= 'text' name= 'option' placeholder= 'Enter option here'></input>
+      <input type= 'text' name= 'option' placeholder= 'Enter option here' onChange = {(e) => props.updateOption(e.target.value, props.option)}></input>
     </Fragment>
   );
 }
