@@ -1,1 +1,2 @@
 NamedExec array error: https://github.com/jmoiron/sqlx/pull/285
+Error handling in Rust: https://blog.yoshuawuyts.com/error-handling-survey/

@@ -1,5 +1,5 @@
 import { takeLatest } from "redux-saga/effects";
-import { %file_name%Init } from "./%file_name%.actions";
+import { collegeInit } from "./college.actions";
 
 function* increaseCount() {
     try {
@@ -8,5 +8,5 @@ function* increaseCount() {
 }
 
 export const counterEffects = [
-    takeLatest(%file_name%Init, increaseCount),
+    takeLatest(collegeInit, increaseCount),
 ];
