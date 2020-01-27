@@ -1,15 +1,15 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { collegeSuccess } from "./college.actions";
 
-export interface collegeState {
+export interface CollegeState {
     isLoading: boolean;
 }
 
-export const collegeInitState: collegeState = {
+export const collegeInitState: CollegeState = {
     isLoading: true,
 }
 
-export const collegeReducer = createReducer<collegeState>(collegeInitState, (builder) => {
+export const collegeReducer = createReducer<CollegeState>(collegeInitState, (builder) => {
     builder
         .addCase(collegeSuccess, () => {
         return {

@@ -2,3 +2,4 @@ node_modules
 .idea
 target
 build-tools/component-cli/src/components/src/
+build-tools/component-cli/src/components/college/

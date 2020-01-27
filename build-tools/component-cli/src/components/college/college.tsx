@@ -1,10 +1,10 @@
 import React from 'react'
 
-function collegeComponent() {
+function CollegeComponent() {
     return (
         <div>
         </div>
     )
 }
 
-export default collegeComponent
+export default CollegeComponent
